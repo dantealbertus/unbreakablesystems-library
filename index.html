@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unbreakable Systems — System Library</title>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIAB0AQAAJgAAACAgAAAAACAA5gAAAJoBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAE7SURBVHic7VO7SgNRFJy5d+OajVukELGx8APSbCGEdBKwCFvZaWOK/IAE/AV/IfgTgmhhYWOh4DdY2ShYhWzcZHfHIg83iyti7cCFc+bcM+ceLgOUgyXxj2CzG/pBJ/CKhfbpca1/3ve/m0IACHqBg5e1S2NsC1IkJidPV483AHB01g3tmr2gsD5NkruN98rhYDBIAMDMhYRneBT3IfmOW9lSZlrLKUZ7btXdzJT5BjwYbY+qAJQXgHWsAESSMmUSwXgpIBOnSTqrAFF+BZNPRJjcWvziRZIEQBZ6VpK/4F+gIEAhw+x/F2fOzwBAArLyFxA1koaGFOQuaBGudSxJGgLe5GPCogDTnXQM6RrkMJlO35jpIXfpPh7Hr8aaIcHb+m49QpnBmmHoN9qNWpHv9Dre3Ey/d2ZJvIJP2npxv5977zcAAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAACtSURBVHic7c6xDcIwEEbhd2YMaCJGoGMFr4AUJCSGYAFWSCooWIEJEC0jkCJ7+FKiKD5LaWhyf3nRiz/wLX1ifdjFfURpBda/q3ZJQv15vl+55nA5RdCWUUOHpvpxvWebYMqUZvw4gFRB9WY1oA2ThgpZmY0JADbGfTu/UbMpAf4yBzjAAQ5wgAMc4AAHlABf497PbaTQmIAkcsz8sBf0bD6vadII9JrEbnyL3wC6ySklezVrAgAAAABJRU5ErkJggg==">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -88,6 +89,17 @@
     flex-shrink: 0; z-index: 1;
     background-color: #0a100c;
     background-size: cover; background-position: center; background-repeat: no-repeat;
+  }
+  .thumb-overlay {
+    position: absolute; inset: 0;
+    background: rgba(5,8,6,0.42);
+    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.28s, backdrop-filter 0.28s;
+  }
+  .card:hover .thumb-overlay {
+    background: rgba(5,8,6,0.18);
+    backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px);
   }
   .thumb-play {
     width: 52px; height: 52px; border-radius: 50%;
@@ -283,6 +295,7 @@ function cardThumb(sys) {
   const imgSrc = sys.thumbnail || '';
   const bg = imgSrc ? `style="background-image:url('${imgSrc}')"` : '';
   return `<div class="card-thumb" ${bg}>
+    <div class="thumb-overlay"></div>
   </div>`;
 }
 
