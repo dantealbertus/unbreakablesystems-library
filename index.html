@@ -89,17 +89,6 @@
     background-color: #0a100c;
     background-size: cover; background-position: center; background-repeat: no-repeat;
   }
-  .thumb-overlay {
-    position: absolute; inset: 0;
-    background: rgba(5,8,6,0.42);
-    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.28s, backdrop-filter 0.28s;
-  }
-  .card:hover .thumb-overlay {
-    background: rgba(5,8,6,0.18);
-    backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px);
-  }
   .thumb-play {
     width: 52px; height: 52px; border-radius: 50%;
     background: rgba(255,255,255,0.13);
@@ -294,7 +283,6 @@ function cardThumb(sys) {
   const imgSrc = sys.thumbnail || '';
   const bg = imgSrc ? `style="background-image:url('${imgSrc}')"` : '';
   return `<div class="card-thumb" ${bg}>
-    <div class="thumb-overlay"></div>
   </div>`;
 }
 
