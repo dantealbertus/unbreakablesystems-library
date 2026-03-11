@@ -242,6 +242,16 @@
         <input type="text" id="f-tags" placeholder="Gmail, GPT-4, Make.com">
         <div class="hint">Comma-separated</div>
       </div>
+      <div class="fg">
+        <label>Benefits</label>
+        <textarea id="f-benefits" placeholder="No more manual data entry&#10;Invoices processed within seconds&#10;Automatic sync with bookkeeping" style="min-height:120px"></textarea>
+        <div class="hint">One benefit per line</div>
+      </div>
+      <div class="fg">
+        <label>Problems it solves</label>
+        <textarea id="f-problems" placeholder="Time-consuming manual processing&#10;Errors from retyping data&#10;Delays in the workflow" style="min-height:120px"></textarea>
+        <div class="hint">One problem per line</div>
+      </div>
 
       <button class="submit-btn" id="submitBtn" onclick="saveSystem()">Add system →</button>
       <button class="cancel-btn" id="cancelBtn" style="display:none" onclick="cancelEdit()">Cancel</button>
@@ -376,22 +386,26 @@ function saveSystem() {
   const video = document.getElementById('f-video').value.trim();
   const thumb = document.getElementById('f-thumb').value.trim();
   const tagsRaw = document.getElementById('f-tags').value.trim();
+  const benefitsRaw = document.getElementById('f-benefits').value.trim();
+  const problemsRaw = document.getElementById('f-problems').value.trim();
   const status = document.getElementById('f-status').value;
   const editId = document.getElementById('editId').value;
   if (!name||!cat||!desc) { alert('Please fill in name, category and description.'); return; }
   const tags = tagsRaw ? tagsRaw.split(',').map(t=>t.trim()).filter(Boolean) : [];
+  const benefits = benefitsRaw ? benefitsRaw.split('\n').map(t=>t.trim()).filter(Boolean) : [];
+  const problems = problemsRaw ? problemsRaw.split('\n').map(t=>t.trim()).filter(Boolean) : [];
   const systems = loadSys();
   if (editId) {
     const idx = systems.findIndex(s => s.id == editId);
-    if (idx > -1) systems[idx] = {...systems[idx], name, category:cat, description:desc, video:embed(video), thumbnail:thumb, tags, status};
+    if (idx > -1) systems[idx] = {...systems[idx], name, category:cat, description:desc, video:embed(video), thumbnail:thumb, tags, status, benefits, problems};
   } else {
-    systems.push({id:Date.now(), name, category:cat, description:desc, video:embed(video), thumbnail:thumb, tags, status, benefits:[], problems:[]});
+    systems.push({id:Date.now(), name, category:cat, description:desc, video:embed(video), thumbnail:thumb, tags, status, benefits, problems});
   }
   saveSys(systems); clearForm(); renderList();
 }
 
 function clearForm() {
-  ['f-name','f-desc','f-video','f-thumb','f-tags'].forEach(id => document.getElementById(id).value='');
+  ['f-name','f-desc','f-video','f-thumb','f-tags','f-benefits','f-problems'].forEach(id => document.getElementById(id).value='');
   document.getElementById('f-cat').value='';
   document.getElementById('f-status').value='Published';
   document.getElementById('editId').value='';
@@ -410,6 +424,8 @@ function editSystem(id) {
   document.getElementById('f-video').value = sys.video||'';
   document.getElementById('f-thumb').value = sys.thumbnail||'';
   document.getElementById('f-tags').value = (sys.tags||[]).join(', ');
+  document.getElementById('f-benefits').value = (sys.benefits||[]).join('\n');
+  document.getElementById('f-problems').value = (sys.problems||[]).join('\n');
   document.getElementById('f-status').value = sys.status==='Draft' ? 'Draft' : 'Published';
   document.getElementById('editId').value = id;
   document.getElementById('formTitle').textContent = 'Edit system';
