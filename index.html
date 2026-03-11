@@ -259,9 +259,14 @@ const DEFAULT_SYSTEMS = [
 const CAT = {"Operations":"cat-operations","Lead Generation":"cat-lead-gen","Content":"cat-content","Reporting":"cat-reporting","Communication":"cat-communication"};
 let systems = [], activeFilter = "all";
 
-function load() {
-  try { const s = localStorage.getItem('ubs_systems'); systems = s ? JSON.parse(s) : DEFAULT_SYSTEMS; }
-  catch(e) { systems = DEFAULT_SYSTEMS; }
+async function load() {
+  try {
+    const res = await fetch('/api/data');
+    const data = await res.json();
+    systems = data.systems || DEFAULT_SYSTEMS;
+  } catch(e) {
+    systems = DEFAULT_SYSTEMS;
+  }
 }
 
 function embed(url) {
@@ -357,9 +362,8 @@ document.getElementById('modalOverlay').addEventListener('click', e => { if(e.ta
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
 window.addEventListener('scroll', () => { document.getElementById('siteHeader').classList.toggle('scrolled', scrollY > 20); });
 
-load(); renderFilters(); setFilter('all');
+load().then(() => { renderFilters(); setFilter('all'); });
 document.querySelector('[data-cat="all"]').onclick = () => setFilter('all');
-window.addEventListener('storage', e => { if(e.key==='ubs_systems'){ load(); renderFilters(); setFilter(activeFilter); } });
 </script>
 </body>
 </html>
