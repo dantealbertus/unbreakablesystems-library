@@ -143,13 +143,30 @@
     .grid { grid-template-columns:repeat(2, 1fr); }
   }
   @media(max-width:768px){
-    header,.hero,.filters-wrap,.grid-wrap { padding-left:20px; padding-right:20px; }
-    header { height:80px; }
-    .hero { padding-top:80px; }
-    .grid { grid-template-columns:1fr; }
-    .modal-body { padding:28px 24px 32px; }
-    .modal-title { font-size:28px; }
-    .modal-overlay { padding:20px 12px; }
+    header,.hero,.filters-wrap,.grid-wrap { padding-left:16px; padding-right:16px; }
+    header { height:64px; padding:0 16px; }
+    header svg { transform:scale(0.52); transform-origin:left center; }
+    body { font-size:14px; line-height:1.55; }
+    .hero { padding-top:52px; padding-bottom:52px; }
+    .hero h1 { font-size:clamp(26px,7vw,38px); letter-spacing:-1px; margin-bottom:16px; }
+    .hero-sub { font-size:15px; max-width:100%; }
+    .eyebrow { font-size:11px; padding:7px 14px; gap:7px; margin-bottom:20px; }
+    .filter-btn { font-size:13px; padding:8px 16px; }
+    .results-info { font-size:13px; }
+    .grid { grid-template-columns:1fr; gap:14px; }
+    .card-body { padding:18px 20px 20px; }
+    .card-title { font-size:17px; min-height:auto; }
+    .cat-pill { font-size:10px; padding:4px 10px; }
+    .card-desc { font-size:14px; }
+    .tag { font-size:12px; padding:4px 10px; }
+    .modal-overlay { padding:12px 10px; }
+    .modal-body { padding:22px 20px 28px; }
+    .modal-title { font-size:22px; }
+    .modal-cat { font-size:10px; }
+    .modal-desc { font-size:15px; line-height:1.65; }
+    .modal-section-title { font-size:15px; }
+    .modal-list li { font-size:14px; gap:10px; }
+    .modal-tags .tag { font-size:12px; padding:4px 10px; }
   }
 </style>
 </head>
@@ -214,27 +231,27 @@
 const DEFAULT_SYSTEMS = [
   { id:1, name:"Invoice Processing Agent", category:"Operations",
     description:"Monitors Gmail for incoming invoices, extracts data using GPT-4o Vision, and syncs with QuickBooks Desktop via Conductor.is. Includes a review dashboard and Slack notifications.",
-    video:"https://www.youtube.com/embed/dQw4w9WgXcQ", tags:["Gmail","GPT-4o Vision","QuickBooks","Conductor.is","Slack"], status:"Live",
+    video:"https://www.youtube.com/embed/dQw4w9WgXcQ", tags:["Gmail","GPT-4o Vision","QuickBooks","Conductor.is","Slack"], status:"Published",
     benefits:["No more manual data entry","Invoices processed within seconds","Automatic sync with bookkeeping","Review dashboard for the office manager"],
     problems:["Time-consuming manual invoice processing","Errors from retyping data","Delays in the accounting workflow","No overview of outstanding invoices"] },
   { id:2, name:"Call Recording & Transcription", category:"Operations",
     description:"Monitors Gmail for voicemail messages, merges WAV files, transcribes via Whisper, generates summaries, and uploads to Google Drive and GHL CRM.",
-    video:"", tags:["Whisper","Python","Railway","Google Drive","GHL CRM"], status:"Live",
+    video:"", tags:["Whisper","Python","Railway","Google Drive","GHL CRM"], status:"Published",
     benefits:["Automatic transcription of all voicemails","Structured summaries per conversation","Stored directly in CRM and Drive","Never miss a message again"],
     problems:["Voicemails that go unlistened","No text archive of conversations","Manually logging call notes in the CRM"] },
   { id:3, name:"Lead Qualification Bot", category:"Lead Generation",
     description:"Automatically qualifies incoming leads via an AI conversation. Updates the CRM and sends a summary to the sales rep.",
-    video:"", tags:["GHL","OpenAI","Webhooks","SMS"], status:"Demo",
+    video:"", tags:["GHL","OpenAI","Webhooks","SMS"], status:"Published",
     benefits:["24/7 automatic lead qualification","Sales rep receives a ready-made summary","Higher conversion through fast follow-up","CRM always up to date"],
     problems:["Slow follow-up on incoming leads","Sales reps wasting time on unqualified leads","Inconsistent lead data in the CRM"] },
   { id:4, name:"LinkedIn Content Agent", category:"Content",
     description:"Generates weekly LinkedIn posts based on news articles and your writing style. Sends for review in Slack before publishing.",
-    video:"", tags:["GPT-4","Slack","Make.com","RSS"], status:"In Progress",
+    video:"", tags:["GPT-4","Slack","Make.com","RSS"], status:"Published",
     benefits:["Consistent weekly content output","Posts written in your own voice","Review step via Slack before publishing","Saves multiple hours every week"],
     problems:["No time for consistent content creation","Inconsistent presence on LinkedIn","Blank-page problem when writing"] },
   { id:5, name:"Weekly KPI Report", category:"Reporting",
     description:"Pulls data from CRM, Sheets, and ad platforms, builds a PDF report, and sends it automatically every Monday.",
-    video:"", tags:["Google Sheets","Make.com","PDF","Email"], status:"Live",
+    video:"", tags:["Google Sheets","Make.com","PDF","Email"], status:"Published",
     benefits:["Weekly report with zero manual effort","All KPIs combined in one overview","Always in the inbox on Monday","Easy to share with clients or team"],
     problems:["Hours spent manually building reports","Data scattered across multiple platforms","Inconsistent reporting frequency"] }
 ];
@@ -280,7 +297,7 @@ function renderGrid() {
   const empty = document.getElementById('emptyState');
   const info = document.getElementById('resultsInfo');
   const list = (activeFilter === "all" ? systems : systems.filter(s => s.category === activeFilter))
-    .filter(s => s.status !== 'Draft');
+    .filter(s => s.status !== 'Draft' && s.status !== 'draft');
   grid.innerHTML = '';
   if (!list.length) { empty.style.display = "block"; info.textContent = ""; return; }
   empty.style.display = "none";
