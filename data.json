@@ -115,7 +115,7 @@
         "PDF",
         "Email"
       ],
-      "status": "Published",
+      "status": "Draft",
       "benefits": [
         "Weekly report with zero manual effort",
         "All KPIs combined in one overview",
@@ -138,7 +138,7 @@
       "tags": [
         "e"
       ],
-      "status": "Draft",
+      "status": "Published",
       "benefits": [
         "e"
       ],
