@@ -199,6 +199,32 @@
         "Important messages get lost in the noise",
         "Manual sorting takes too much time"
       ]
+    },
+    {
+      "id": 1773435387103,
+      "name": "AI Proposal Generator",
+      "category": "Sales",
+      "description": "An AI-powered automation that generates a fully branded, client-ready proposal in minutes. By filling out a single form with call notes, problem details, proposed solution, timeline, and pricing, the system uses AI to write the proposal copy, extract milestones, build a pricing table, and populate a personalized proposal or quote template ready to review and send.",
+      "video": "https://www.youtube.com/embed/em6Pain-qS4",
+      "thumbnail": "https://assets.cdn.filesafe.space/FaDYEAHefRcXT8qVtejj/media/69b19a438d3eaece121b20a4.png",
+      "tags": [
+        "Typeform",
+        "PandaDoc",
+        "OpenAI"
+      ],
+      "status": "Published",
+      "benefits": [
+        "Save hours on drafting custom proposals",
+        "No more starting from a blank page, just fill in the form and the system handles the rest",
+        "Built-in e-signing means the client can sign directly from the document without any extra steps",
+        "Automated follow-ups to make sure the client signs the agreement"
+      ],
+      "problems": [
+        "Writing proposals takes too much time",
+        "Client details have to be manually copy-pasted into documents",
+        "No consistent follow-up process after sending proposals",
+        "Proposals lack structure or miss key sections"
+      ]
     }
   ],
   "categories": [
