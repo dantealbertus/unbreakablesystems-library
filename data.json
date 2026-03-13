@@ -40,7 +40,7 @@
         "Google Drive",
         "GHL CRM"
       ],
-      "status": "Draft",
+      "status": "Published",
       "benefits": [
         "Automatic transcription of all voicemails",
         "Structured summaries per conversation",
@@ -65,7 +65,7 @@
         "Webhooks",
         "SMS"
       ],
-      "status": "Published",
+      "status": "Draft",
       "benefits": [
         "24/7 automatic lead qualification",
         "Sales rep receives a ready-made summary",
