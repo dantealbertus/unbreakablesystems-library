@@ -53,6 +53,8 @@ async function writeData(data) {
       if (getRes.ok) {
         const json = await getRes.json();
         sha = json.sha;
+      } else {
+        console.error('GitHub GET failed:', getRes.status, await getRes.text());
       }
 
       const content = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
@@ -62,7 +64,7 @@ async function writeData(data) {
         ...(sha ? { sha } : {})
       };
 
-      await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`, {
+      const putRes = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${GITHUB_TOKEN}`,
@@ -72,10 +74,16 @@ async function writeData(data) {
         },
         body: JSON.stringify(body)
       });
-      return;
+      if (putRes.ok) {
+        console.log('GitHub write OK');
+        return;
+      }
+      const errText = await putRes.text();
+      console.error('GitHub PUT failed:', putRes.status, errText);
     } catch(e) { console.error('GitHub write error:', e.message); }
   }
   // Fallback: local file
+  console.log('Falling back to local file storage');
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
 }
 
