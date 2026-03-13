@@ -1,1 +1,151 @@
-{"systems":null,"categories":null}
+{
+  "systems": [
+    {
+      "id": 1,
+      "name": "Invoice Processing Agent",
+      "category": "Operations",
+      "description": "Monitors Gmail for incoming invoices, extracts data using GPT-4o Vision, and syncs with QuickBooks Desktop via Conductor.is. Includes a review dashboard and Slack notifications.",
+      "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "tags": [
+        "Gmail",
+        "GPT-4o Vision",
+        "QuickBooks",
+        "Conductor.is",
+        "Slack"
+      ],
+      "status": "Draft",
+      "benefits": [
+        "No more manual data entry",
+        "Invoices processed within seconds",
+        "Automatic sync with bookkeeping",
+        "Review dashboard for the office manager"
+      ],
+      "problems": [
+        "Time-consuming manual invoice processing",
+        "Errors from retyping data",
+        "Delays in the accounting workflow",
+        "No overview of outstanding invoices"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Call Recording & Transcription",
+      "category": "Operations",
+      "description": "Monitors Gmail for voicemail messages, merges WAV files, transcribes via Whisper, generates summaries, and uploads to Google Drive and GHL CRM.",
+      "video": "",
+      "tags": [
+        "Whisper",
+        "Python",
+        "Railway",
+        "Google Drive",
+        "GHL CRM"
+      ],
+      "status": "Published",
+      "benefits": [
+        "Automatic transcription of all voicemails",
+        "Structured summaries per conversation",
+        "Stored directly in CRM and Drive",
+        "Never miss a message again"
+      ],
+      "problems": [
+        "Voicemails that go unlistened",
+        "No text archive of conversations",
+        "Manually logging call notes in the CRM"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Lead Qualification Bot",
+      "category": "Lead Generation",
+      "description": "Automatically qualifies incoming leads via an AI conversation. Updates the CRM and sends a summary to the sales rep.",
+      "video": "",
+      "tags": [
+        "GHL",
+        "OpenAI",
+        "Webhooks",
+        "SMS"
+      ],
+      "status": "Published",
+      "benefits": [
+        "24/7 automatic lead qualification",
+        "Sales rep receives a ready-made summary",
+        "Higher conversion through fast follow-up",
+        "CRM always up to date"
+      ],
+      "problems": [
+        "Slow follow-up on incoming leads",
+        "Sales reps wasting time on unqualified leads",
+        "Inconsistent lead data in the CRM"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "LinkedIn Content Agent",
+      "category": "Content",
+      "description": "Generates weekly LinkedIn posts based on news articles and your writing style. Sends for review in Slack before publishing.",
+      "video": "",
+      "tags": [
+        "GPT-4",
+        "Slack",
+        "Make.com",
+        "RSS"
+      ],
+      "status": "Published",
+      "benefits": [
+        "Consistent weekly content output",
+        "Posts written in your own voice",
+        "Review step via Slack before publishing",
+        "Saves multiple hours every week"
+      ],
+      "problems": [
+        "No time for consistent content creation",
+        "Inconsistent presence on LinkedIn",
+        "Blank-page problem when writing"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Weekly KPI Report",
+      "category": "Reporting",
+      "description": "Pulls data from CRM, Sheets, and ad platforms, builds a PDF report, and sends it automatically every Monday.",
+      "video": "",
+      "tags": [
+        "Google Sheets",
+        "Make.com",
+        "PDF",
+        "Email"
+      ],
+      "status": "Published",
+      "benefits": [
+        "Weekly report with zero manual effort",
+        "All KPIs combined in one overview",
+        "Always in the inbox on Monday",
+        "Easy to share with clients or team"
+      ],
+      "problems": [
+        "Hours spent manually building reports",
+        "Data scattered across multiple platforms",
+        "Inconsistent reporting frequency"
+      ]
+    },
+    {
+      "id": 1773434856941,
+      "name": "test",
+      "category": "Communication",
+      "description": "e",
+      "video": "e",
+      "thumbnail": "e",
+      "tags": [
+        "e"
+      ],
+      "status": "Published",
+      "benefits": [
+        "e"
+      ],
+      "problems": [
+        "e"
+      ]
+    }
+  ],
+  "categories": null
+}
