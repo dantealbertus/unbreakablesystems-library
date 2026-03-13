@@ -145,6 +145,35 @@
       "problems": [
         "e"
       ]
+    },
+    {
+      "id": 1773435278099,
+      "name": "Instant Onboarding System",
+      "category": "Operations",
+      "description": "A fully automated onboarding system that triggers the moment a new client is closed. By filling out a single onboarding form and hitting submit, the entire onboarding sequence runs hands-free: the CRM is updated, a contract is sent, the client receives a welcome email, a communication channel is set up, and all client data including a full receivables schedule is logged.",
+      "video": "https://www.youtube.com/embed/jVrXq1mdvw4",
+      "thumbnail": "https://assets.cdn.filesafe.space/FaDYEAHefRcXT8qVtejj/media/69b470a8fb38ca42e49b7f88.png",
+      "tags": [
+        "OpenAI",
+        "Airtable",
+        "GHL",
+        "PandaDoc",
+        "Slack",
+        "Email"
+      ],
+      "status": "Published",
+      "benefits": [
+        "Your entire onboarding process runs automatically from a single form submission",
+        "New clients receive a contract and welcome email within minutes of closing",
+        "All client data lands in your database",
+        "Nothing falls through the cracks, every step of onboarding is accounted for and logged"
+      ],
+      "problems": [
+        "Onboarding a new client involves too many manual steps",
+        "CRM records are incomplete or filled in late",
+        "Contracts get sent late or forgotten",
+        "Confused clients asking for documents, access, and next steps"
+      ]
     }
   ],
   "categories": null
