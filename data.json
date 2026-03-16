@@ -225,6 +225,28 @@
         "No consistent follow-up process after sending proposals",
         "Proposals lack structure or miss key sections"
       ]
+    },
+    {
+      "id": 1773660976177,
+      "name": "AI Call Recording Processor",
+      "category": "Communication",
+      "description": "c",
+      "video": "https://www.youtube.com/embed/X7rKN2w9JA8",
+      "thumbnail": "https://assets.cdn.filesafe.space/FaDYEAHefRcXT8qVtejj/media/69b7eac29379cf12a4aff90e.png",
+      "tags": [
+        "Fathom",
+        "Fireflies.ai",
+        "GHL",
+        "Claude",
+        "OpenAI"
+      ],
+      "status": "Published",
+      "benefits": [
+        "c"
+      ],
+      "problems": [
+        "c"
+      ]
     }
   ],
   "categories": [
