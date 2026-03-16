@@ -230,7 +230,7 @@
       "id": 1773660976177,
       "name": "AI Call Recording Processor",
       "category": "Communication",
-      "description": "c",
+      "description": "An automation that activates the moment a call ends and handles everything from transcription to CRM update without any manual input. Using an AI notetaker like Fathom or Fireflies.ai, the system extracts the call transcript, generates a structured AI summary, pushes the notes to the correct contact in GHL CRM, and automatically sends the client a personalized follow-up email including a link to the recording and a clear overview of next steps.",
       "video": "https://www.youtube.com/embed/X7rKN2w9JA8",
       "thumbnail": "https://assets.cdn.filesafe.space/FaDYEAHefRcXT8qVtejj/media/69b7eac29379cf12a4aff90e.png",
       "tags": [
@@ -242,10 +242,14 @@
       ],
       "status": "Published",
       "benefits": [
-        "c"
+        "Call notes are captured and pushed to your CRM automatically the moment a call ends",
+        "Clients receive a personalized follow-up email with the recording link and summary without any manual work",
+        "You stay fully present during calls without worrying about note-taking"
       ],
       "problems": [
-        "c"
+        "Notes taken during calls are incomplete or never make it into the CRM",
+        "Next steps get lost or forgotten after calls",
+        "Following up after calls requires writing and sending a recap manually"
       ]
     }
   ],
